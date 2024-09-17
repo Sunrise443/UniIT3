@@ -1,4 +1,4 @@
-package lab2;
+package lab2.examle;
 
 public class Point3d extends Point2d {
     private double zCoord;

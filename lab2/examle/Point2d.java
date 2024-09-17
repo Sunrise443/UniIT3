@@ -1,4 +1,4 @@
-package lab2;
+package lab2.examle;
 
 public class Point2d {
     private double xCoord;

@@ -17,5 +17,8 @@ public class MainShapes {
         secondParallelepiped.setPerimeter(secondParallelepiped.pWidth, 40.0);
         System.out.println("secondParallelepiped perimeter: " + secondParallelepiped.getPerimeter());
         System.out.println("firstParallelepiped dimension: " + firstParallelepiped.getDimension());
+        
+        Cylinder firstCylinder = new Cylinder(10, 5);
+        firstCylinder.getMeasures();
     }
 }

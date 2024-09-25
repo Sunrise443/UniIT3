@@ -10,4 +10,8 @@ public abstract  class GeometricShape {
     public void setDimension(int val){
         dimension = val;
     }
+
+    public void displayDimension() {
+        System.out.println("Dimension: " + dimension);
+    }
 }

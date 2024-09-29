@@ -11,7 +11,7 @@ public class TasksTwo {
         System.out.println(dividedByThree(arrayOne));
         System.out.println(getInitials("simonov sergei evgenievich"));
         double[] arrayTwo = {3.5, 7.0, 1.5, 9.0, 5.5};
-        System.out.println(Arrays.toString(normalizator(arrayTwo))); //have questions about this one
+        System.out.println(Arrays.toString(normalizator(arrayTwo))); //
         double[] arrayThree = {1.6, 0, 212.3, 34.8, 0, 27.5};
         System.out.println(compressedNums(arrayThree));
         System.out.println(camelToSnake("helloWorldAgain"));
@@ -100,11 +100,13 @@ public class TasksTwo {
         String[] wordList = word.split(charac);
         for (int i=0; i<wordList.length; i++) {
             String toReverse = wordList[i];
-            String reversed = "";
-            for (int j=0; j<toReverse.length(); j++) {
-                reversed = toReverse.charAt(j) + reversed;
+            if (i%2!=0) {
+                String reversed = "";
+                for (int j=0; j<toReverse.length(); j++) {
+                    reversed = toReverse.charAt(j) + reversed;
+                }
+                wordList[i] = reversed;
             }
-            wordList[i] = reversed;
         }
         String finalString = "";
         for (String i : wordList) {
@@ -126,7 +128,7 @@ public class TasksTwo {
     }
 
     public static boolean isAnagram(String a, String b) {
-        //for each letter in the alphabet count how many of the letters ate in the word
+        //for each letter in the alphabet count how many of the letters are in the word
         int charA;
         a = a.toLowerCase();
         b = b.toLowerCase();

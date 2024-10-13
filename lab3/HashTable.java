@@ -90,6 +90,7 @@ public class HashTable<K, V> {
                 list.remove(rec);
             }
         }
+        size--;
     }
     
     //size() - amount of elemets in the table

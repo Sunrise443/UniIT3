@@ -18,14 +18,13 @@ public class HashTable<K, V> {
         }
         size = 0;
     }
-    
-    //change to private
-    public int getHash (int obj) {
+   
+    private int getHash (int obj) {
         int hashCode;
         hashCode = obj*50%hSize;
         return hashCode;
     }
-    public int getIndex (K key) {
+    private int getIndex (K key) {
         Object _key = key;
         return getHash((int) _key);
     }

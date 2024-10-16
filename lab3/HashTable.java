@@ -12,7 +12,7 @@ public class HashTable<K, V> {
     //object (holds all the key-value pairs) - constructor
     public HashTable(int hSize) {
         this.hSize = hSize;
-        this.hTable = new LinkedList[this.hSize]; //присваиваем ссылку на оссоциативный массив соответствующего размера (пустой)
+        this.hTable = new LinkedList[this.hSize]; //присваиваем ссылку на ассоциативный массив соответствующего размера (пустой)
         for (int i=0; i<this.hSize; i++) {
             this.hTable[i] = new LinkedList<>(); //заполнение массива пустыми массивами и разрешение коллизий (LinkedList)
         }

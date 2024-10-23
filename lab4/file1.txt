@@ -1,0 +1,2 @@
+Content of the first file is here.
+We'll need to copy this and paste it into another file.

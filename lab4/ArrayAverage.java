@@ -9,9 +9,9 @@ public class ArrayAverage {
             if (arr.length == 0) {
                 throw new IllegalArgumentException("Ошибка: в массиве нет данных.");
             }
-            for (int i=0; i<arr.length; i++) {
-                if (arr[i] instanceof Integer) {
-                    sum += arr[i];
+            for (Integer arr1 : arr) {
+                if (arr1 instanceof Integer) {
+                    sum += arr1;
                 } else {
                     throw new IllegalArgumentException("Ошибка: элемент массива не является числом.");
                 } 

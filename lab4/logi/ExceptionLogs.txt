@@ -1,0 +1,2 @@
+окт. 26, 2024 10:49:32 PM lab4.logi.LoggerFile log
+ALL: Empry stack error

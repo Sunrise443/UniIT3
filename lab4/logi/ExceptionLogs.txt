@@ -1,2 +1,10 @@
 окт. 26, 2024 10:49:32 PM lab4.logi.LoggerFile log
 ALL: Empry stack error
+окт. 27, 2024 1:18:07 AM lab4.logi.LoggerFile log
+ALL: Empty stack error
+окт. 28, 2024 1:18:31 PM lab4.logi.LoggerFile log
+ALL: Empty stack error
+окт. 28, 2024 1:33:02 PM lab4.logi.LoggerFile log
+ALL: Empty stack error
+окт. 28, 2024 1:41:52 PM lab4.logi.LoggerFile log
+ALL: Empty stack error

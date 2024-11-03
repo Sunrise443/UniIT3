@@ -26,6 +26,7 @@ public class FileCopy {
 
             //чтение и запись данных
             while ((count=inputStream.read(buffer))!=-1) {
+                inputStream.close();
                 outputStream.write(buffer, 0, count);
             }
             System.out.println("Информация из файла была записана в другой файл.");

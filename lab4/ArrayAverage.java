@@ -2,16 +2,16 @@ package lab4;
 
 public class ArrayAverage {
     public static void main(String[] args) {
-        Integer[] arr = {1,2,3,4,5};
+        Object[] arr = {"1", "3"};
         int sum = 0;
 
         try {
             if (arr.length == 0) {
                 throw new IllegalArgumentException("Ошибка: в массиве нет данных.");
             }
-            for (Integer arr1 : arr) {
-                if (arr1 instanceof Integer) {
-                    sum += arr1;
+            for (int i=0; i<arr.length; i++) {
+                if (arr[i] instanceof Integer) {
+                    sum += (Integer)arr[i];
                 } else {
                     throw new IllegalArgumentException("Ошибка: элемент массива не является числом.");
                 } 

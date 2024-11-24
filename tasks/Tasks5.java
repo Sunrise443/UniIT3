@@ -1,14 +1,27 @@
 package tasks;
 
-public class TasksFive {
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
+
+public class Tasks5 {
     public static void main (String[] args) {
-        System.out.println(sameLetterPattern("BCCBA", "BCDCB"));
-        System.out.println(memeSum(248, 208));
-        System.out.println(digitsCount(4676));
+        System.out.println(sameLetterPattern("BCCBA", "BCDCB")); //1
+        System.out.println(memeSum(248, 208)); //2
+        System.out.println(digitsCount(4676)); //3
         String[] arg = {"dote", "dotes", "toes", "set", "dot", "dots", "sted"};
-        System.out.println(totalPoints(arg, "tossed"));
+        System.out.println(totalPoints(arg, "tossed")); //4
         int[] run = {1, 2, 3, 5, 6, 7, 8, 9};
-        System.out.println(longestRun(run));
+        System.out.println(longestRun(run)); //5
+        System.out.println(takeDownAverage(new String[]{"95%", "83%", "90%", "87%", "88%", "93%"})); //6
+        System.out.println(maxPossible(91327, 76)); //8
+        System.out.println(timeDifference("Los Angeles", "April 1, 2011 23:23", "Canberra"));
+        System.out.println(isNew(321)); //10
     }
 
     public static boolean sameLetterPattern (String first, String second) {
@@ -127,5 +140,84 @@ public class TasksFive {
             if (mRun<run) mRun=run;
         }
         return mRun;
+    }
+
+    public static String takeDownAverage(String[] grades) {
+        int sum = 0;
+        int n = grades.length;
+
+        for (String grade : grades) {
+            sum += Integer.parseInt(grade.replace("%", ""));
+        }
+
+        double currentAverage = (double) sum / n;
+        double newAverage = currentAverage * 0.95;
+        double x = (newAverage * (n + 1)) - sum;
+
+        int result = (int) Math.round(Math.min(Math.max(x, 0), 100));
+        return result + "%";
+    }
+
+    public static int maxPossible (int first, int second){
+        String both = first+""+second;
+        String fir = first+"";
+        char[] digits = both.toCharArray();
+        Arrays.sort(digits);
+        both = "";
+        for (int i=fir.length()+1; i>1; i--) {
+            both += digits[i];
+        }
+        return Integer.parseInt(both);
+    }
+
+    public static String timeDifference(String cityA, String timestampA, String cityB) {
+
+        Map<String, Integer> cityTimeZones = new HashMap<>();
+        cityTimeZones.put("Los Angeles", -8);
+        cityTimeZones.put("New York", -5);
+        cityTimeZones.put("Caracas", -4);
+        cityTimeZones.put("Buenos Aires", -3);
+        cityTimeZones.put("London", 0);
+        cityTimeZones.put("Rome", 1);
+        cityTimeZones.put("Moscow", 3);
+        cityTimeZones.put("Tehran", 4);
+        cityTimeZones.put("New Delhi", 6);
+        cityTimeZones.put("Beijing", 8);
+        cityTimeZones.put("Canberra", 10);
+
+        int offsetA = cityTimeZones.get(cityA);
+        int offsetB = cityTimeZones.get(cityB);
+
+        SimpleDateFormat formatA = new SimpleDateFormat("MMMM d, yyyy HH:mm", Locale.US);
+        try {
+            Date dateA = formatA.parse(timestampA);
+
+            int timeDifference = offsetB - offsetA;
+
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(dateA);
+            calendar.add(Calendar.HOUR, timeDifference);
+
+            SimpleDateFormat formatB = new SimpleDateFormat("yyyy-M-d HH:mm");
+            String timestampB = formatB.format(calendar.getTime());
+
+            return timestampB;
+        } catch  (ParseException e) {
+            e.printStackTrace();
+            return "";
+        }
+    }
+
+    public static boolean isNew(int num) {
+        char[] numChars = (num+"").toCharArray();
+        Arrays.sort(numChars);
+        for (int i=1; i<num; i++) {
+            char[] iChars = Integer.toString(i).toCharArray();
+            Arrays.sort(iChars);
+            if (Arrays.equals(numChars, iChars)) {
+                return false;
+            }
+        }
+        return true;
     }
 }

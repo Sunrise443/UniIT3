@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 
-public class TasksTwo {
+public class Tasks2 {
     public static void main (String[] args) {
         System.out.println(duplicateChars("Barack", "Obama"));
         int[] arrayOne = {3, 12, 7, 81, 52};

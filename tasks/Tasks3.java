@@ -2,7 +2,7 @@ package tasks;
 
 import java.util.*;
 
-public class TasksThree {
+public class Tasks3 {
     public static void main(String[] args) {
         System.out.println(isStrangePair("hello", "harry"));
 

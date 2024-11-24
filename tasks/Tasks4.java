@@ -2,7 +2,7 @@ package tasks;
 
 import java.util.*;
 
-public class TasksFour {
+public class Tasks4 {
     public static void main(String[] args) {
         System.out.println("1)");
         nonRepeat("aaajaujkkjua");

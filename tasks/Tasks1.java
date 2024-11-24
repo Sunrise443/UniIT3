@@ -1,6 +1,6 @@
 package tasks;
 
-public class TasksOne {
+public class Tasks1 {
     public static void main(String[] args) {
         System.out.println(convert(3));
         System.out.println(fitCalc(41, 3));

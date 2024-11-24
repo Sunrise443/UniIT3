@@ -34,11 +34,6 @@ public class Sold {
     }
 
     public void put (String item) {
-        /*if (price!=null && !prices.containsKey(item)) {
-            prices.put(item, price);
-
-        }
-        */
         sold.add(item);
         System.out.println("An item has been sold.");
     }

@@ -11,12 +11,10 @@ public class TopWords {
         Scanner scanner;
         List<Entry<String, Integer>> top10List = new ArrayList<>();
 
-
         try {
             scanner = new Scanner(file);
 
-            //object Map for keeping words and their amount
-            Map<String, Integer> mWords = new HashMap<>();
+            Map<String, Integer> mWords = new HashMap<>(); //object Map for keeping words and their amount
 
             //reading file by words and adding them to Map
             while (scanner.hasNext()) {
@@ -29,11 +27,9 @@ public class TopWords {
                 }
             }
 
-            //closing Scanner
-            scanner.close();
-
-            //list of Map elements
-            List<Entry<String, Integer>> mList = new ArrayList<>(mWords.entrySet());
+            scanner.close(); //closing Scanner
+            
+            List<Entry<String, Integer>> mList = new ArrayList<>(mWords.entrySet()); //list of Map elements
 
             //sort the list
             Collections.sort(mList, new Comparator<Entry<String, Integer>>() {

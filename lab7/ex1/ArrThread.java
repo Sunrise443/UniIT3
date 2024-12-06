@@ -1,15 +1,20 @@
 package ex1;
 
-public class ArrThread extends Thread {
-    private ArrSum arrSum;
+import java.util.ArrayList;
 
-    public ArrThread(ArrSum arrSum) {
+public class ArrThread extends Thread {
+    private final ArrSum arrSum;
+    private final ArrayList<Integer> arr;
+
+    public ArrThread(ArrSum arrSum, ArrayList<Integer> arr) {
         this.arrSum = arrSum;
+        this.arr = arr;
     }
 
-    public void run(int[] arr) {
-        for (int i=0; i<arr.length; i++) {
-            arrSum.increment(arr[i]);
+    @Override
+    public void run() {
+        for (int i=0; i<arr.size(); i++) {
+            arrSum.increment(arr.get(i));
         }
     }
 }

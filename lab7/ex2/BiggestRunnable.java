@@ -4,12 +4,8 @@ public class BiggestRunnable extends Thread {
     private int[] arr;
     private int mx;
 
-    public void setLine(int[] line) {
-        arr = line;
-    }
-
-    public int getResult() {
-        return mx;
+    public BiggestRunnable(int[] arr) {
+        this.arr = arr;
     }
 
     @Override
@@ -20,5 +16,6 @@ public class BiggestRunnable extends Thread {
                 mx = element;
             }
         }
+        ex2.BiggestMain.biggestOfLines.add(mx);
     }
 }

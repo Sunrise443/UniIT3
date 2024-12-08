@@ -22,7 +22,7 @@ public class WorkersThread extends Thread{
                 workerLoadWeight = 0;
                 workerLoad.clear();
             }
-            System.out.println((Thread.currentThread().getName()+"") + "fin storage" + finStorage.getFin() + "load" + workerLoad);
+            System.out.println((Thread.currentThread().getName()+"") + " finstorage" + finStorage.getFin() + " load" + workerLoad);
         }
         finStorage.increment(workerLoad);
         workerLoadWeight = 0;

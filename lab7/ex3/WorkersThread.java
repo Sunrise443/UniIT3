@@ -4,31 +4,27 @@ import java.util.ArrayList;
 
 public class WorkersThread extends Thread{
     private FinStorage finStorage;
-    private ProductsLoad productsLoad;
-    private ArrayList<Integer> storage0Load;
+    private ArrayList<Integer> workerLoad = new ArrayList<>();
+    private int workerLoadWeight = 0;
 
-    public WorkersThread(FinStorage finStorage, ProductsLoad productsLoad, ArrayList<Integer> storage0Load) {
+    public WorkersThread(FinStorage finStorage) {
         this.finStorage = finStorage;
-        this.productsLoad = productsLoad;
-        this.storage0Load = storage0Load;
     }
 
     @Override
     public void run() {
-        while (!storage0Load.isEmpty()) {
-            synchronized (this) {
-                if (productsLoad.getLoadWeight()<=150 && !storage0Load.isEmpty()) {
-                    productsLoad.increment(storage0Load.get(0));
-                    storage0Load.remove(0);
-                } else if (productsLoad.getLoadWeight()>150) {
-                    finStorage.increment(productsLoad.getLoad());
-                    productsLoad.increment(-1);
-                } else {
-                    finStorage.increment(productsLoad.getLoad());
-                }
-                System.out.println(finStorage.getFin() + "" + productsLoad.getLoad() + productsLoad.getLoadWeight() +" " + storage0Load);
-                
+        while (!(ex3.Main.strtStorage).isEmpty()) {
+            if (workerLoadWeight<150){
+                workerLoadWeight += (ex3.Main.strtStorage).get(0);
+                workerLoad.add((ex3.Main.strtStorage).remove(0));
+            } else {
+                finStorage.increment(workerLoad);
+                workerLoadWeight = 0;
+                workerLoad.clear();
             }
+            System.out.println((Thread.currentThread().getName()+"") + "fin storage" + finStorage.getFin() + "load" + workerLoad);
         }
+        finStorage.increment(workerLoad);
+        workerLoadWeight = 0;
     }
 }

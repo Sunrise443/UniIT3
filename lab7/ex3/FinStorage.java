@@ -11,7 +11,7 @@ public class FinStorage {
         }
     }
 
-    public synchronized ArrayList<Integer> getFin() {
+    public ArrayList<Integer> getFin() {
         return new ArrayList<>(finStorage);
     }
 }

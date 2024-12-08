@@ -17,14 +17,16 @@ public class WorkersThread extends Thread{
     public void run() {
         while (!storage0Load.isEmpty()) {
             synchronized (this) {
-                if (productsLoad.getLoadWeight()<=150) {
+                if (productsLoad.getLoadWeight()<=150 && !storage0Load.isEmpty()) {
                     productsLoad.increment(storage0Load.get(0));
                     storage0Load.remove(0);
-                } else {
+                } else if (productsLoad.getLoadWeight()>150) {
                     finStorage.increment(productsLoad.getLoad());
                     productsLoad.increment(-1);
+                } else {
+                    finStorage.increment(productsLoad.getLoad());
                 }
-                System.out.println(finStorage.getFin() + "" + productsLoad.getLoad() + productsLoad.getLoadWeight());
+                System.out.println(finStorage.getFin() + "" + productsLoad.getLoad() + productsLoad.getLoadWeight() +" " + storage0Load);
                 
             }
         }

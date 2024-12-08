@@ -7,6 +7,8 @@ public class Main {
 
     public static void main(String[] args) {
         strtStorage.add(1);
+        strtStorage.add(2);
+        strtStorage.add(70);
         strtStorage.add(100);
 
         FinStorage finStorage = new FinStorage();
